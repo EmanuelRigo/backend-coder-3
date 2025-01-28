@@ -25,7 +25,13 @@ const UserSchema = new mongoose.Schema({
         default: 'user'
     },
     pets: {
-        type:[
-            {_id:{type: mongoose.Schema.Types.ObjectId, ref: 'Pets'}}
-        ], default: []
+        type: [
+            { _id: { type: mongoose.Schema.Types.ObjectId, ref: 'Pets' } }
+        ],
+        default: []
     }
+});
+
+const UserModel = mongoose.model(collection, UserSchema);
+
+export default UserModel;
